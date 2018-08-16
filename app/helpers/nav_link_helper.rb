@@ -105,6 +105,8 @@ module NavLinkHelper
       Rails.application.routes.recognize_path(path)[:controller]
     rescue ActionController::RoutingError
       nil
+    rescue NoMethodError
+      nil
     end
 
     def current_segment
